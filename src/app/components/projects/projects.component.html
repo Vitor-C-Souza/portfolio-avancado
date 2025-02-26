@@ -1,1 +1,16 @@
-
+<section class="projects">
+  <section class="title_subtitle">
+    <h1>PROJECTS</h1>
+    <h2>EXPLORE NOW</h2>
+  </section>
+  <section class="content">
+    <div *ngFor="let item of projectsList">
+      <app-card
+        [title]="item.title"
+        [description]="item.description"
+        [link]="item.link"
+        [tecnologies]="item.tecnologies"
+      />
+    </div>
+  </section>
+</section>

@@ -1,0 +1,15 @@
+<a href="{{ link }}" target="_blank">
+  <div class="card-content">
+    <h3>{{ title }}</h3>
+    <p>
+      {{ description }}
+    </p>
+    <div>
+      <h4>tecnologies</h4>
+      <ul *ngIf="tecnologies !== []">
+        <li *ngFor="let item of tecnologies">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="hover-text">👉 Visitar Repositório</div>
+</a>

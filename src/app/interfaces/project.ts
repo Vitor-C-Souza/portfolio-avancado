@@ -2,5 +2,5 @@ export interface Project {
   title: string;
   description: string;
   link: string;
-  tecnologies: String[];
+  tecnologies: string[];
 }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { Project } from '../../interfaces/project';
+import { CardComponent } from '../card/card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [CardComponent, CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
@@ -21,7 +23,7 @@ export class ProjectsComponent {
       description:
         'A Graphql API to manage a book catalog, developed with Spring Boot, Mongodb and Graphql.',
       link: 'https://github.com/Vitor-C-Souza/catalagos-de-livros',
-      tecnologies: ['Java', 'Spring`Boot', 'MongoDB', 'GraphQL'],
+      tecnologies: ['Java', 'Spring Boot', 'MongoDB', 'GraphQL'],
     },
   ];
 }
