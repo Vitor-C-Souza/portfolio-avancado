@@ -3,6 +3,7 @@ import { ContainerComponent } from '../../components/container/container.compone
 import { AboutmeComponent } from '../../components/aboutme/aboutme.component';
 import { MeComponent } from '../../components/me/me.component';
 import { ExperienceComponent } from '../../components/experience/experience.component';
+import { ProjectsComponent } from '../../components/projects/projects.component';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { ExperienceComponent } from '../../components/experience/experience.comp
     AboutmeComponent,
     MeComponent,
     ExperienceComponent,
+    ProjectsComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
