@@ -11,6 +11,16 @@
       technologies, dedicated to building robust, scalable, and efficient
       applications.
     </article>
+    <section class="tech">
+      <div *ngFor="let section of techSections">
+        <button (click)="toggleSection(section)">
+          {{ section.title }} <i class="bx bx-chevron-down"></i>
+        </button>
+        <ul *ngIf="section.open">
+          <li *ngFor="let item of section.items">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
   </section>
 
   <button>Contact me</button>

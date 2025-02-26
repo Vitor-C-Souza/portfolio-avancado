@@ -3,7 +3,7 @@ import { ContainerComponent } from '../container/container.component';
 
 @Component({
   selector: 'app-aboutme',
-  imports: [ContainerComponent],
+  imports: [],
   templateUrl: './aboutme.component.html',
   styleUrl: './aboutme.component.scss',
 })

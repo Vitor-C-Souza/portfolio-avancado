@@ -10,14 +10,40 @@
   }
 
   button {
-    padding: 16px;
+    position: relative;
+    padding: 16px 32px;
+    border: none;
     border-radius: 30px;
-    border-color: white;
-    background-color: rgb(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 24px;
     font-weight: bold;
     margin-top: 36px;
+    cursor: pointer;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 4px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #5a42f5, #ff4d00);
+    -webkit-mask: linear-gradient(white, white) content-box,
+      linear-gradient(white, white);
+    mask: linear-gradient(white, white) content-box,
+      linear-gradient(white, white);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  button:active {
+    transform: scale(0.95);
   }
 
   .content {
@@ -41,6 +67,76 @@
     article {
       font-size: 24px;
       width: 80%;
+    }
+  }
+
+  .tech {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    justify-content: center;
+
+    div {
+      text-align: center;
+
+      button {
+        position: relative;
+        font-size: 20px;
+        border: none;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 8px;
+        width: 150px;
+        min-height: 70px;
+        cursor: pointer;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+        overflow: hidden;
+        margin-bottom: 8px;
+      }
+
+      button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 4px;
+        border-radius: 30px;
+        background: linear-gradient(to right, #5a42f5, #ff4d00);
+        -webkit-mask: linear-gradient(white, white) content-box,
+          linear-gradient(white, white);
+        mask: linear-gradient(white, white) content-box,
+          linear-gradient(white, white);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          font-size: 18px;
+          padding: 8px 0;
+          text-align: center;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(to right, #5a42f5, #ff4d00);
+            margin: 6px auto 0;
+          }
+        }
+
+        li:last-child::after {
+          display: none;
+        }
+      }
     }
   }
 }
