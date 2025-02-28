@@ -2,30 +2,44 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  text-align: center;
+
   h1 {
     align-self: center;
-    font-size: 36px;
+    font-size: 48px; // Melhorando o tamanho para mais destaque
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 24px;
   }
 
   form {
     align-self: center;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
     width: 50%;
-    padding: 32px; // Espaçamento interno para a borda não ficar colada no conteúdo
+    padding: 40px; // Melhorando o espaçamento interno
     position: relative;
     border-radius: 30px;
     z-index: 1;
-    overflow: hidden; // Garante que o efeito da borda não ultrapasse o form
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6); // Fundo levemente opaco
+    backdrop-filter: blur(10px); // Efeito de vidro
 
     &::before {
       content: "";
       position: absolute;
-      inset: 0; // Faz com que o elemento cubra todo o formulário
-      padding: 4px; // Espessura da borda
+      inset: 0;
+      padding: 4px;
       border-radius: 30px;
-      background: linear-gradient(to right, #5a42f5, #ff4d00);
+      background: linear-gradient(135deg, #5a42f5, #ff4d00);
       -webkit-mask: linear-gradient(white, white) content-box,
         linear-gradient(white, white);
       mask: linear-gradient(white, white) content-box,
@@ -38,19 +52,34 @@
     .input_form {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 8px;
       font-size: 16px;
+
       label {
         margin-left: 16px;
+        font-weight: bold;
+        color: #ffffff;
       }
-      input {
+
+      input,
+      textarea {
         border-radius: 30px;
-        padding: 10px;
+        padding: 12px;
+        border: none;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        outline: none;
+        transition: background 0.3s ease;
+
+        &:focus {
+          background: rgba(255, 255, 255, 0.2);
+        }
       }
 
       textarea {
-        border-radius: 30px;
-        padding: 40px;
+        padding: 20px;
+        resize: none;
+        height: 150px;
       }
     }
 
@@ -62,40 +91,55 @@
       border-radius: 30px;
       background-color: rgba(0, 0, 0, 0.5);
       color: white;
-      padding: 8px;
-      width: 150px;
-      min-height: 70px;
+      padding: 16px;
+      width: 200px;
       cursor: pointer;
       font-weight: bold;
       text-align: center;
       z-index: 1;
       overflow: hidden;
       margin-bottom: 8px;
-    }
+      transition: transform 0.5s ease, background 0.3s ease;
 
-    button::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      padding: 4px;
-      border-radius: 30px;
-      background: linear-gradient(to right, #5a42f5, #ff4d00);
-      -webkit-mask: linear-gradient(white, white) content-box,
-        linear-gradient(white, white);
-      mask: linear-gradient(white, white) content-box,
-        linear-gradient(white, white);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      z-index: -1;
+      &:hover {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, #5a42f5, #ff4d00);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        padding: 4px;
+        border-radius: 30px;
+        background: linear-gradient(to right, #5a42f5, #ff4d00);
+        -webkit-mask: linear-gradient(white, white) content-box,
+          linear-gradient(white, white);
+        mask: linear-gradient(white, white) content-box,
+          linear-gradient(white, white);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        z-index: -1;
+      }
     }
   }
 }
 
-button {
-  transition: all 0.5s;
-  cursor: pointer;
-  &:hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+@media (max-width: 768px) {
+  .contact form {
+    width: 90%;
+    padding: 24px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100%;
   }
 }

@@ -1,32 +1,51 @@
+:host {
+  display: block;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease, opacity 0.3s ease;
+  opacity: 1;
+  gap: 12px;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 a {
-  width: 500px;
-  max-width: 500px;
+  width: 100%;
+  max-width: 550px;
   text-decoration: none;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  height: 240px;
-  transition: background-color 0.3s ease;
-  border-radius: 30px;
-  padding: 20px;
+  gap: 16px;
+  height: 300px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 20px;
+  padding: 24px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
   overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.05);
   }
 
   &::before {
@@ -34,7 +53,7 @@ a {
     position: absolute;
     inset: 0;
     padding: 4px;
-    border-radius: 30px;
+    border-radius: 20px;
     background: linear-gradient(to right, #5a42f5, #ff4d00);
     -webkit-mask: linear-gradient(white, white) content-box,
       linear-gradient(white, white);
@@ -45,20 +64,9 @@ a {
     z-index: -1;
   }
 
-  .card-content {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease, opacity 0.3s ease;
-    opacity: 1;
-    gap: 8px;
-    flex: 1;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
   .hover-text {
     position: absolute;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
     color: white;
     opacity: 0;
@@ -68,7 +76,7 @@ a {
   }
 
   &:hover .card-content {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     opacity: 0;
   }
 
@@ -76,13 +84,20 @@ a {
     opacity: 1;
     transform: translateY(0);
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
+
   h4 {
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
+
   h3 {
-    font-size: 24px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
   }
 }
