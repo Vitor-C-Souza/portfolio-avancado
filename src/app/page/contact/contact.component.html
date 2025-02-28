@@ -1,1 +1,33 @@
-<app-container> </app-container>
+<app-container>
+  <section class="contact">
+    <h1>Shall we work together?</h1>
+    <h2>
+      I am available for new opportunities or projects. Fill out the form or
+      send me an email!
+    </h2>
+    <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
+      <div class="input_form">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" name="name" required />
+      </div>
+      <div class="input_form">
+        <label for="email">E-mail</label>
+        <input type="email" formControlName="email" name="email" required />
+      </div>
+      <div class="input_form">
+        <label for="subject">Subject</label>
+        <input type="text" formControlName="subject" name="subject" />
+      </div>
+      <div class="input_form">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          formControlName="message"
+          name="message"
+          required
+        ></textarea>
+      </div>
+      <button type="submit">SSend</button>
+    </form>
+  </section>
+</app-container>
