@@ -4,17 +4,22 @@
     <h2>EXPLORE NOW</h2>
   </div>
   <article>
-    <p>
-      As a passionate software developer, I thrive on the perfect balance
-      between logic and creativity. Currently immersed in the world of backend
-      development, my expertise centers around Java, Spring Boot, and cloud
-      technologies, where I seamlessly blend performance with innovation.
-    </p>
-    <p>
-      With a strong drive for crafting efficient solutions, I navigate the
-      ever-evolving landscape of software development. My journey involves
-      designing scalable architectures, optimizing databases, and constantly
-      pushing the boundaries of what's possible in backend engineering.
-    </p>
+    <div class="content" [ngClass]="{ open: isOpen }" #content>
+      <p>
+        As a passionate software developer, I thrive on the perfect balance
+        between logic and creativity. Currently immersed in the world of backend
+        development, my expertise centers around Java, Spring Boot, and cloud
+        technologies, where I seamlessly blend performance with innovation.
+      </p>
+      <p>
+        With a strong drive for crafting efficient solutions, I navigate the
+        ever-evolving landscape of software development. My journey involves
+        designing scalable architectures, optimizing databases, and constantly
+        pushing the boundaries of what's possible in backend engineering.
+      </p>
+    </div>
+    <button class="read-more-btn" (click)="toggleReadMore()">
+      {{ isOpen ? "Ler menos" : "Ler mais" }}
+    </button>
   </article>
 </section>

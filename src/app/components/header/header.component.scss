@@ -11,13 +11,19 @@ header {
     flex-direction: row;
     gap: 50%;
     list-style-type: none;
+
     li {
       padding: 8px 16px;
       border-radius: 30px;
       transition: background-color 0.3s ease;
       font-size: 24px;
+
       &:hover {
         background-color: grey;
+      }
+      a {
+        text-decoration: none;
+        color: white;
       }
     }
   }
